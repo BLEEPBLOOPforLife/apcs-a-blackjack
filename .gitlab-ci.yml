@@ -10,7 +10,9 @@ build:
   script:
     - mkdir bin
     - /usr/lib/jvm/java-8-openjdk-amd64/bin/javac -d bin/ src/eggroll/apcsa/blackjack/*.java
-    - /usr/lib/jvm/java-8-openjdk-amd64/bin/jar -cvfm bin/blackjack.jar build-dependencies/MANIFEST.MF bin/eggroll/apcsa/blackjack/*.class
+    - cd bin
+    - /usr/lib/jvm/java-8-openjdk-amd64/bin/jar -cvfm blackjack.jar ../build-dependencies/MANIFEST.MF eggroll/apcsa/blackjack/*.class
+    - cd ../
     - mkdir public
     - cp bin/blackjack.jar public/blackjack.jar
   artifacts:
