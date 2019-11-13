@@ -4,7 +4,7 @@ A CLI implementation of blackjack. This was made for an AP Computer Science A fi
 
 ## Download Instructions
 
-Download the latest build artifact by clicking [here](https://gitlab.com/bleepbloop/apcs-a-blackjack/-/jobs/artifacts/master/raw/bin/blackjack.jar?job=build).
+Download the latest build artifact by clicking [here](https://bleepbloop.gitlab.io/apcs-a-blackjack/blackjack.jar).
 
 ## Run Instructions
 
