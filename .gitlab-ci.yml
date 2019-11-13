@@ -1,0 +1,19 @@
+image: java:latest
+
+stages:
+  - build
+
+build:
+  stage: build
+  only:
+    - master
+  script:
+    - mkdir bin
+    - /usr/lib/jvm/java-8-openjdk-amd64/bin/javac -d bin/ src/eggroll/apcsa/blackjack/*.java
+    - /usr/lib/jvm/java-8-openjdk-amd64/bin/jar -cvfm bin/blackjack.jar build-dependencies/MANIFEST.MF bin/eggroll/apcsa/blackjack/*.class
+    - mkdir public
+    - cp bin/blackjack.jar public/blackjack.jar
+  artifacts:
+    paths:
+      - bin/*.jar
+    expire_in: 1 year
