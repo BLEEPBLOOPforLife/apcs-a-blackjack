@@ -20,7 +20,7 @@ public class Deck {
 	}
 	
 	public void InitDeck( ) { // Creates the instances of each of the 52 cards and stores them into the deck.
-		for ( int i = 0; i < 52; i++ ) { // This one's sorta a screwfest \_(O)_/. 0-12 = hearts, 13-25 = diamonds, 26-38 = clubs, 39-51 = spades
+		for ( int i = 0; i < 52; i++ ) { // 0-12 = hearts, 13-25 = diamonds, 26-38 = clubs, 39-51 = spades
 			if ( i == 0 ) { // Ace of hearts
 				MakeCard( "Heart", 1 );
 			} else if ( i >= 1 && i <= 9 ) { // Number cards of hearts
