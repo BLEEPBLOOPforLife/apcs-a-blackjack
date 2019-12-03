@@ -45,23 +45,15 @@ public abstract class Player {
 		
 		// Below code adds up aces separately.
 		
-		if ( aces == 1 ) { // Single ace.
-			if ( totalValue <= 10 ) { // Checks if an ace can be taken as an 11 without exceeding 21, otherwise, set ace value to 1.
-				totalValue += 11;
-			} else {
-				totalValue += 1;
-			}
-		} else { // Multiple aces.
-			if ( totalValue + aces >= 21 ) { // Checks if the aces with them being worth one and the current value combined add up to 21.
-				totalValue += aces;
-			} else { // Could be room for one or more aces to be worth 11.
-				for ( int i = aces; i >= 0; i-- ) { // Tries aces starting with all of them being worth 11.
-					int tryValue = totalValue + i * 11 + aces - i; // Calculates attempted total value with the number of aces being worth 11 specified by i.
-					
-					if ( tryValue <= 21 ) { // Checks if the attempted total value is less than or equal to 21, and if so, sets the value of totalValue to the attempted total value and breaks from the loop.
-						totalValue = tryValue;
-						break;
-					}
+		if ( totalValue + aces >= 21 ) { // Checks if the aces with them being worth one and the current value combined add up to 21.
+			totalValue += aces;
+		} else { // Could be room for one or more aces to be worth 11.
+			for ( int i = aces; i >= 0; i-- ) { // Tries aces starting with all of them being worth 11.
+				int tryValue = totalValue + i * 11 + aces - i; // Calculates attempted total value with the number of aces being worth 11 specified by i.
+				
+				if ( tryValue <= 21 ) { // Checks if the attempted total value is less than or equal to 21, and if so, sets the value of totalValue to the attempted total value and breaks from the loop.
+					totalValue = tryValue;
+					break;
 				}
 			}
 		}
