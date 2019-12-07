@@ -1,6 +1,5 @@
 package eggroll.apcsa.blackjack;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Blackjack {
@@ -17,15 +16,11 @@ public class Blackjack {
 		String play = null;
 		
 		do { // Check for a valid input and try again if invalid.
-			try {
-				if ( play != null ) { // Check if they're on the second time around.
-					System.out.print( "Invalid input. Enter y or n. " );
-				}
-				
-				play = scanner.nextLine( );
-			} catch( InputMismatchException error ) {
-				System.out.println( "Invalid input. Enter y or n." );
+			if ( play != null ) { // Check if they're on the second time around.
+				System.out.print( "Invalid input. Enter y or n. " );
 			}
+			
+			play = scanner.nextLine( );
 		} while ( !play.toLowerCase( ).equals( "y" ) && !play.toLowerCase( ).equals( "n" ) );
 		
 		if ( play.toLowerCase( ).equals( "n" ) ) {
@@ -42,21 +37,18 @@ public class Blackjack {
 		dealer = new Dealer( deck );
 		System.out.println( "The dealer drew a(n) " + dealer.getCard( 0 ) + ". Current hand value: " + dealer.getTotalHandValue( ) );
 		System.out.println( "You drew a(n) " + ply.getCard( 0 ) + " and a(n) " + ply.getCard( 1 ) + ". Current hand value: " + ply.getTotalHandValue( ) );
-		String choice = null;
+		String choice;
 		
 		do { // Loops while the human hits.
+			choice = null;
 			System.out.print( "Would you like to hit or stand? (hit/stand) " );
 			
 			do { // Check for a valid input and try again if invalid.
-				try {
-					if ( choice != null && !choice.equals( "hit" ) && !choice.equals( "stand" ) ) { // Check if they made an invalid input.
-						System.out.print( "Invalid input. Enter hit or stand. " );
-					}
-					
-					choice = scanner.nextLine( );
-				} catch( InputMismatchException error ) {
-					System.out.println( "Invalid input. Enter hit or stand." );
+				if ( choice != null ) { // Second time around.
+					System.out.print( "Invalid input. Enter hit or stand. " );
 				}
+				
+				choice = scanner.nextLine( );
 			} while ( !choice.toLowerCase( ).equals( "hit" ) && !choice.toLowerCase( ).equals( "stand" ) );
 			
 			if ( choice.toLowerCase( ).equals( "hit" ) ) { // If the player hits, tell them what they drew and their total hand value.
@@ -108,15 +100,11 @@ public class Blackjack {
 		String play = null;
 		
 		do { // Check for a valid input and try again if invalid.
-			try {
-				if ( play != null ) { // Check if they're on the second time around.
-					System.out.print( "Invalid input. Enter y or n. " );
-				}
-				
-				play = scanner.nextLine( );
-			} catch( InputMismatchException error ) {
-				System.out.println( "Invalid input. Enter y or n." );
+			if ( play != null ) { // Check if they're on the second time around.
+				System.out.print( "Invalid input. Enter y or n. " );
 			}
+			
+			play = scanner.nextLine( );
 		} while ( !play.toLowerCase( ).equals( "y" ) && !play.toLowerCase( ).equals( "n" ) );
 		
 		if ( play.toLowerCase( ).equals( "n" ) ) { // Aww, the player said no. :(
