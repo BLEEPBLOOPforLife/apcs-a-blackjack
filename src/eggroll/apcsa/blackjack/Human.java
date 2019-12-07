@@ -2,7 +2,7 @@ package eggroll.apcsa.blackjack;
 
 public class Human extends Player {
 	public Human( Deck deck ) { // Constructor
-		super( deck );
+		super( deck ); // Call the Player class' constructor.
 		hand.add( deck.drawRandom( ) ); // Drawing/adding first card to hand.
 		hand.add( deck.drawRandom( ) ); // Drawing/adding second card to hand.
 	}

@@ -2,7 +2,7 @@ package eggroll.apcsa.blackjack;
 
 public class Dealer extends Player {
 	public Dealer( Deck deck ) { // Constructor
-		super( deck );
+		super( deck ); // Call the Player class' constructor.
 		hand.add( deck.drawRandom( ) ); // Drawing/adding first card to hand. Deferring second draw.
 	}
 	
